@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+
+      <form id="checkboxId">
+        <label> <input type="checkbox" name="Seyehat" /> Seyehat </label><br />
+        <label> <input type="checkbox" name="Yemek" /> Yemek </label><br />
+        <label> <input type="checkbox" name="Spor" /> Spor </label><br />
+        <label> <input type="checkbox" name="Sinema" /> Sinema </label><br />
+        <label> <input type="checkbox" name="Fitness" /> Fitness </label><br />
+<br>    
+        <button type="button" onclick="kaydet()">Kaydet</button>
+        
+    </form>
+
+      <div id="sonuc"></div>
+
+      <script>
+        function kaydet() {
+       
+          var hobi = document.getElementById("checkboxId");
+            
+          var checkboxlar = hobi.querySelectorAll('input[type="checkbox"]');
+
+          var Hobiler = [];
+
+          checkboxlar.forEach(function (checkbox) {
+            if (checkbox.checked) {
+              Hobiler.push(checkbox.name);
+            }
+          });
+
+          var kayitHobi = document.getElementById("sonuc");
+          kayitHobi.innerHTML = "" + Hobiler.join(", ");
+        }
+      </script>
+    </div>
+  </body>
+</html>
